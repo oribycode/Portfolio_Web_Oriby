@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Oriby Code">
+    <title>Oriby Code - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/DgV2M81c/1000045557.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .oriby-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .oriby-container::before {
+            content: "oriby";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            font-size: 40px;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            z-index: -1;
+        }
+
+        /* Contact Information - Moved Up */
+        .oriby-contact-info {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .oriby-phone {
+            color: #4f46e5;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .oriby-phone:hover {
+            transform: translateY(-2px);
+            color: #6366f1;
+        }
+
+        /* Floating Icons Styles - Enhanced */
+        .oriby-floating-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .oriby-floating-icon {
+            position: absolute;
+            color: rgba(99, 102, 241, 0.1);
+            animation: oribyFloatIcon 15s linear infinite;
+        }
+
+        @keyframes oribyFloatIcon {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(50px, 50px) rotate(180deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* Profile Section */
+        .oriby-profile {
+            padding-top: 5rem;
+            position: relative;
+        }
+
+        .oriby-profile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #f6f8fd 0%, #f1f4f9 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            z-index: -1;
+        }
+
+        .oriby-profile-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            animation: oriby-float 3s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .oriby-profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .oriby-profile-circle::after {
+            content: 'oriby';
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 2px dashed #6366f1;
+            animation: oriby-rotate 20s linear infinite;
+        }
+
+        @keyframes oriby-float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes oriby-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .oriby-developer-title {
+            margin-top: 2rem;
+            font-size: 2.5rem;
+            color: #2d3748;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .oriby-position {
+            font-size: 1.2rem;
+            color: #6366f1;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .oriby-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .oriby-social-link {
+            color: #4f46e5;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: #f1f4f9;
+        }
+
+        .oriby-social-link:hover {
+            transform: translateY(-5px);
+            color: #6366f1;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Info Section */
+        .oriby-info-section {
+            margin: 4rem 0;
+            text-align: left;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .oriby-section-title {
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .oriby-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #6366f1;
+            border-radius: 3px;
+        }
+
+        /* Skills Section */
+        .oriby-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .oriby-skill-tag {
+            background: #f1f4f9;
+            color: #4f46e5;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .oriby-skill-tag:hover {
+            background: #6366f1;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .oriby-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .oriby-project-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oriby-project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #6366f1, #4f46e5);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .oriby-project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .oriby-project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .oriby-project-title {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .oriby-project-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .oriby-project-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .oriby-project-links a {
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Footer */
+        .oriby-footer {
+            background: #f8fafc;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .oriby-address {
+            color: #64748b;
+            font-size: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .oriby-footer-text {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .oriby-footer-email {
+            color: #6366f1;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .oriby-container {
+                padding: 1rem;
+            }
+
+            .oriby-profile-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .oriby-developer-title {
+                font-size: 1.8rem;
+            }
+
+            .oriby-position {
+                font-size: 1rem;
+            }
+
+            .oriby-projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background Icons -->
+    <div class="oriby-floating-icons">
+        <i class="fas fa-code oriby-floating-icon" style="top: 10%; left: 10%"></i>
+        <i class="fas fa-laptop-code oriby-floating-icon" style="top: 30%; left: 80%"></i>
+        <i class="fas fa-terminal oriby-floating-icon" style="top: 70%; left: 20%"></i>
+        <i class="fas fa-browser oriby-floating-icon" style="top: 50%; left: 50%"></i>
+        <i class="fas fa-database oriby-floating-icon" style="top: 85%; left: 75%"></i>
+        <i class="fas fa-server oriby-floating-icon" style="top: 40%; left: 30%"></i>
+        <i class="fas fa-code-branch oriby-floating-icon" style="top: 65%; left: 85%"></i>
+        <i class="fas fa-bug oriby-floating-icon" style="top: 25%; left: 65%"></i>
+        <i class="fas fa-keyboard oriby-floating-icon" style="top: 90%; left: 40%"></i>
+        <i class="fas fa-desktop oriby-floating-icon" style="top: 15%; left: 45%"></i>
+    </div>
+
+    <!-- Main Container -->
+    <div class="oriby-container">
+        <!-- Profile Section -->
+        <div class="oriby-profile">
+            <!-- Contact Information - Moved Up -->
+            <div class="oriby-contact-info">
+                <a href="tel:+8809638068890" class="oriby-phone">
+                    <i class="fas fa-phone"></i> +880 963 806 8890
+                </a>
+            </div>
+
+            <div class="oriby-profile-circle">
+                <img src="https://i.ibb.co/DgV2M81c/1000045557.png" alt="Oriby Code" class="oriby-profile-image">
+            </div>
+            <h1 class="oriby-developer-title">Oriby Code</h1>
+            <p class="oriby-position">Unlock Your Ideas with Oriby Code</p>
+
+            <!-- Social Links -->
+            <div class="oriby-social-links">
+                <a href="mailto:oribycode@gmail.com" class="oriby-social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://t.me/oribycode" class="oriby-social-link" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://facebook.com/oribycode" class="oriby-social-link" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://github.com/oribycode" class="oriby-social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="oriby-info-section">
+            
+
+         
+            <h2 class="oriby-section-title">Skills & Expertise</h2>
+            <div class="oriby-skills">
+                <span class="oriby-skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                <span class="oriby-skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                <span class="oriby-skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="oriby-skill-tag"><i class="fab fa-node"></i> Node.js</span>
+                <span class="oriby-skill-tag"><i class="fab fa-python"></i> Python</span>
+                <span class="oriby-skill-tag"><i class="fab fa-react"></i> React</span>
+            </div>
+
+            <h2 class="oriby-section-title">Featured Projects</h2>
+            <div class="oriby-projects-grid">
+                <!-- Project 1 -->
+                <div class="oriby-project-card">
+                    <h3 class="oriby-project-title"><i class="fas fa-tv"></i> Live TV</h3>
+                    <p class="oriby-project-description">A modern streaming platform for live television channels with real-time updates and interactive features.</p>
+                    <div class="oriby-project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="oriby-project-card">
+                    <h3 class="oriby-project-title"><i class="fas fa-list"></i> Playlists Extractor</h3>
+                    <p class="oriby-project-description">Advanced tool for extracting and managing media playlists with smart organization features.</p>
+                    <div class="oriby-project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="oriby-project-card">
+                    <h3 class="oriby-project-title"><i class="fas fa-code"></i> Live Code Viewer</h3>
+                    <p class="oriby-project-description">Real-time code editing and preview application with support for multiple programming languages.</p>
+                    <div class="oriby-project-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="oriby-footer">
+            <p class="oriby-address">
+                <i class="fas fa-map-marker-alt"></i> Maijdee court, Noakhali, Bangladesh
+            </p>
+            <p class="oriby-footer-text">Crafted with <i class="fas fa-heart" style="color: #6366f1"></i> by Oriby Code</p>
+            <a href="mailto:oribycode@gmail.com" class="oriby-footer-email">
+                <i class="fas fa-envelope"></i> oribycode@gmail.com
+            </a>
+        </footer>
+    </div>
+
+    <!-- Protection Scripts -->
+    <script>
+        // Prevent right-click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        
+        // Prevent keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Initialize floating icons
+        const floatingIcons = document.querySelectorAll('.oriby-floating-icon');
+        floatingIcons.forEach(icon => {
+            icon.style.animationDelay = Math.random() * 15 + 's';
+            icon.style.fontSize = Math.random() * 20 + 20 + 'px';
+        });
+
+        // Project cards animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.oriby-project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Console watermark
+        console.log('%c Developed by Oriby Code', 'color: #6366f1; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+
+</html>
+
