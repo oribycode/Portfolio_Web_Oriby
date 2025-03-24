@@ -338,6 +338,12 @@
             transition: color 0.3s ease;
         }
 
+        /* Visitor Counter Styles */
+        .oriby-visitor-counter {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
         /* Footer */
         .oriby-footer {
             background: #f8fafc;
@@ -414,6 +420,7 @@
     <!-- Main Container -->
     <div class="oriby-container">
         <!-- Profile Section -->
+        
         <div class="oriby-profile">
             <!-- Contact Information - Moved Up -->
             <div class="oriby-contact-info">
@@ -447,9 +454,6 @@
 
         <!-- Projects Section -->
         <div class="oriby-info-section">
-            
-
-         
             <h2 class="oriby-section-title">Skills & Expertise</h2>
             <div class="oriby-skills">
                 <span class="oriby-skill-tag"><i class="fab fa-html5"></i> HTML</span>
@@ -494,6 +498,17 @@
             </div>
         </div>
 
+        <!-- Visitor Counter Section -->
+        <div class="oriby-visitor-counter" style="margin: 3rem 0; text-align: center;">
+            <h2 style="color: #2d3748; font-size: 1.8rem; margin-bottom: 1rem;">Visitor</h2>
+            <p style="color: #64748b; font-size: 1rem; margin-bottom: 1rem;">Track how many visitors have explored our site!</p>
+            <div style="display: inline-block; background: #f1f4f9; padding: 1rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                <a href='http://www.freevisitorcounters.com' style="color: #6366f1; text-decoration: none; font-weight: bold;">Free Visitor Counters</a>
+                <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=2cf3b9ee41b3978fe95f8648f8c4ae922701867f'></script>
+                <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1319328/t/13"></script>
+            </div>
+        </div>
+
         <!-- Footer -->
         <footer class="oriby-footer">
             <p class="oriby-address">
@@ -510,7 +525,7 @@
     <script>
         // Prevent right-click
         document.addEventListener('contextmenu', (e) => e.preventDefault());
-        
+
         // Prevent keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) {
@@ -552,4 +567,3 @@
 </body>
 
 </html>
-
